@@ -1,0 +1,28 @@
+{
+  "name": "finance-traker",
+  "version": "1.0.0",
+  "description": "Projeto em Refencia a matéria da faculdade UTFPR de desenvolvimento de páginas web com framework e CSS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LorenzoHzK/finance-traker.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LorenzoHzK/finance-traker/issues"
+  },
+  "homepage": "https://github.com/LorenzoHzK/finance-traker#readme",
+  "dependencies": {
+    "abc": "^0.6.1",
+    "jquery": "^3.7.1",
+    "xyz": "^5.0.0"
+  },
+  "devDependencies": {
+    "gh-pages": "^6.3.0"
+  }
+}
