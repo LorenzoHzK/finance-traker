@@ -10,57 +10,6 @@ body {
     Ubuntu, Cantarell, sans-serif;
 }
 
-nav {
-  background-color: white;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  padding: 0 40px;
-}
-
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 20px;
-  font-weight: 600;
-  color: #333;
-}
-
-.logo-icon {
-  font-size: 28px;
-  color: #2196f3;
-}
-
-nav ul {
-  display: flex;
-  align-items: center;
-  gap: 30px;
-  list-style: none;
-}
-
-nav ul li a {
-  color: #666;
-  font-size: 14px;
-  text-decoration: none;
-  transition: color 0.3s;
-}
-
-nav ul li a:hover {
-  color: #333;
-}
-
-.profile-pic {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  font-weight: 600;
-  cursor: pointer;
-}
-
 .container-main {
   max-width: 1200px;
   margin: 0 auto;

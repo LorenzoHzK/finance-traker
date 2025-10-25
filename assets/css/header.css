@@ -1,0 +1,27 @@
+nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 0 40px;
+}
+
+nav ul {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+}
+
+nav ul li a {
+  color: #666;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.logo {
+  font-weight: 600;
+  margin-top: 1rem;
+  width: 40px;
+  cursor: pointer;
+}

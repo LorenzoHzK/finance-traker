@@ -11,55 +11,6 @@ body {
 }
 
 /* Customização da Navbar do Materialize */
-nav {
-  background-color: white !important;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  height: 70px;
-  line-height: 70px;
-}
-
-nav .brand-logo {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 20px;
-  font-weight: 600;
-  color: #333 !important;
-  padding-left: 20px;
-}
-
-nav .brand-logo i {
-  font-size: 28px;
-  color: #2196f3;
-  line-height: 70px;
-}
-
-nav ul a {
-  color: #666 !important;
-  font-size: 14px;
-  transition: color 0.3s;
-}
-
-nav ul a:hover {
-  background-color: transparent !important;
-  color: #333 !important;
-}
-
-.profile-pic {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  font-weight: 600;
-  cursor: pointer;
-  vertical-align: middle;
-  margin-top: 15px;
-}
-
 .container-main {
   max-width: 1200px;
   margin: 0 auto;
