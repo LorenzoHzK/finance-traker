@@ -1,3 +1,4 @@
+/* ========== ESTILOS PARA DESKTOP ========== */
 * {
   margin: 0;
   padding: 0;
@@ -68,4 +69,130 @@ h1 {
 .currency-value {
   font-size: 13px;
   color: #666;
+}
+
+/* ========== MEDIA QUERY PARA MOBILE (768px ou menos) ========== */
+@media (max-width: 768px) {
+  body {
+    background-color: #ffffff;
+  }
+
+  .container {
+    max-width: 100%;
+    margin: 0;
+    padding: 20px;
+    border-radius: 0;
+    box-shadow: none;
+    min-height: 100vh;
+  }
+
+  h1 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 24px;
+  }
+
+  .currency-list {
+    gap: 0;
+  }
+
+  .currency-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 20px 0;
+    border-bottom: 1px solid #f0f0f0;
+  }
+
+  .currency-item:last-child {
+    border-bottom: 1px solid #f0f0f0;
+  }
+
+  /* Container do símbolo e informações */
+  .currency-item > div:first-child {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex: 1;
+  }
+
+  .currency-symbol {
+    width: 48px;
+    height: 48px;
+    border-radius: 8px;
+    background-color: #f5f5f5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+    flex-shrink: 0;
+  }
+
+  .currency-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    flex: 1;
+  }
+
+  .currency-name {
+    font-size: 15px;
+    color: #1a1a1a;
+    font-weight: 500;
+    order: 2;
+  }
+
+  /* Código da moeda acima do nome */
+  .currency-name::before {
+    content: attr(data-code);
+    display: block;
+    font-size: 16px;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 2px;
+  }
+
+  /* Adiciona códigos específicos para cada moeda */
+  .currency-item:nth-child(1) .currency-name::before {
+    content: "USD";
+  }
+
+  .currency-item:nth-child(2) .currency-name::before {
+    content: "EUR";
+  }
+
+  .currency-item:nth-child(3) .currency-name::before {
+    content: "GBP";
+  }
+
+  .currency-item:nth-child(4) .currency-name::before {
+    content: "ARS";
+  }
+
+  .currency-item:nth-child(5) .currency-name::before {
+    content: "JPY";
+  }
+
+  .currency-name {
+    font-size: 13px;
+    color: #999;
+    font-weight: 400;
+  }
+
+  .currency-value {
+    font-size: 15px;
+    color: #1a1a1a;
+    font-weight: 500;
+    position: absolute;
+    right: 0;
+  }
+
+  /* Reorganiza layout para ter símbolo + info à esquerda e valor à direita */
+  .currency-item {
+    position: relative;
+  }
 }
