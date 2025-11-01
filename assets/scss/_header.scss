@@ -1,0 +1,67 @@
+nav {
+  background-color: white;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.1);
+  height: auto;
+  line-height: normal;
+}
+
+nav .nav-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2.5rem;
+  min-height: 4rem;
+}
+
+nav .brand-logo {
+  position: static;
+  transform: none;
+  padding: 0;
+  margin: 0;
+  left: auto;
+}
+
+.logo {
+  width: 2.5rem;
+  height: auto;
+  cursor: pointer;
+  display: block;
+}
+
+nav ul {
+  position: static;
+  display: flex;
+  gap: 1.875rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav ul li {
+  float: none;
+  list-style: none;
+}
+
+nav ul li a {
+  color: #666;
+  font-size: 0.875rem;
+  padding: 0;
+  line-height: normal;
+  height: auto;
+  display: inline-block;
+}
+
+nav ul li a:hover {
+  background-color: transparent;
+  color: #333;
+}
+
+.sidenav-trigger {
+  color: #666;
+}
+
+@media only screen and (max-width: 62rem) {
+  nav .nav-wrapper {
+    padding: 0 1.25rem;
+  }
+}

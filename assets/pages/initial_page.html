@@ -4,38 +4,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>FinanceTrack - Dashboard</title>
-
-    <!-- Google Icon Font -->
+    <link rel="icon" href="assets/icons/favicon.ico" />
     <link
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
     />
-
-    <!-- Materialize CSS -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
-    />
-
+    <link rel="stylesheet" href="../css/materialize.min.css" />
     <link rel="stylesheet" href="../css/initial_page.css" />
-
-    <link rel="stylesheet" href="../css/header.css" />
+    <link rel="stylesheet" href="../css/main.css" />
   </head>
-
-  <header>
-    <nav>
-      <div class="nav-wrapper">
-        <img class="logo" src="../icons/Logo.png" alt="" />
-        <ul id="nav-mobile" class="right hide-on-med-and-down">
-          <li><a href="./initial_page.html">Inicio</a></li>
-          <li><a href="./index.html">Visao geral</a></li>
-          <li><a href="./goal_page.html">Metas</a></li>
-          <li><a href="../pages/quotation.html">Moedas</a></li>
-        </ul>
-      </div>
-    </nav>
-  </header>
   <body>
+    <div id="header-placeholder"></div>
+
     <div class="welcome-header">
       <h1>Seja bem-vindo!</h1>
     </div>
@@ -164,5 +144,8 @@
         </div>
       </div>
     </div>
+
+    <script src="../js/materialize.min.js"></script>
+    <script src="../js/load-header.js"></script>
   </body>
 </html>

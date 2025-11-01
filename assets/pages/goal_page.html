@@ -4,38 +4,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>FinanceTrack - Metas e Objetivos</title>
-
-    <!-- Google Icon Font -->
+    <link rel="icon" href="assets/icons/favicon.ico" />
     <link
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
     />
-
-    <!-- Materialize CSS -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
-    />
-
+    <link rel="stylesheet" href="../css/materialize.min.css" />
     <link rel="stylesheet" href="../css/gol_page.css" />
-
-    <link rel="stylesheet" href="../css/header.css" />
+    <link rel="stylesheet" href="../css/main.css" />
   </head>
-  <header>
-    <nav>
-      <div class="nav-wrapper">
-        <img class="logo" src="../icons/Logo.png" alt="" />
-        <ul id="nav-mobile" class="right hide-on-med-and-down">
-          <li><a href="./initial_page.html">Inicio</a></li>
-          <li><a href="./index.html">Visao geral</a></li>
-          <li><a href="./goal_page.html">Metas</a></li>
-          <li><a href="../pages/quotation.html">Moedas</a></li>
-        </ul>
-      </div>
-    </nav>
-  </header>
-
   <body>
+    <div id="header-placeholder"></div>
+
     <div class="container-main">
       <div class="page-header">
         <h1>Metas e Objetivos</h1>
@@ -110,30 +90,16 @@
           </div>
         </div>
       </div>
-
       <a
         class="waves-effect waves-light btn add-goal-btn"
         href="./new_goal.html"
-        >Adicionar Nova Meta</a
       >
+        Adicionar Nova Meta
+      </a>
     </div>
 
-    <!-- Modal Structure -->
-    <div id="modal1" class="modal modal-fixed-footer">
-      <div class="modal-content">
-        <h4>Modal Header</h4>
-        <p>A bunch of text</p>
-      </div>
-      <div class="modal-footer">
-        <a href="#!" class="modal-close waves-effect waves-green btn-flat"
-          >Agree</a
-        >
-      </div>
-    </div>
-
-    <!-- Trigger modal-->
+    <script src="../js/materialize.min.js"></script>
+    <script src="../js/load-header.js"></script>
     <script src="../js/trigger.js"></script>
-    <!-- Materialize JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   </body>
 </html>

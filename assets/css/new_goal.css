@@ -12,74 +12,125 @@ body {
 
 .modal-container {
   background-color: white;
-  border-radius: 8px;
-  padding: 50px 40px;
+  border-radius: 0.5rem;
+  padding: 3.125rem 2.5rem;
   width: 100%;
-  max-width: 500px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  margin: 80px auto;
+  max-width: 31.25rem;
+  box-shadow: 0 0.125rem 0.625rem rgba(0, 0, 0, 0.1);
+  margin: 5rem auto;
 }
 
-h1 {
-  font-size: 32px;
+.modal-container h1 {
+  font-size: 2rem;
   font-weight: 600;
   color: #1a1a1a;
-  margin-bottom: 40px;
+  margin-bottom: 2.5rem;
   text-align: left;
 }
 
-.form-group {
-  margin-bottom: 28px;
+.modal-container .input-field {
+  position: relative;
+  margin: 0 0 1.75rem 0;
 }
 
-label {
-  display: block;
-  font-size: 15px;
-  color: #1a1a1a;
-  margin-bottom: 10px;
-  font-weight: 400;
+.modal-container .input-field label {
+  position: absolute;
+  top: 1rem;
+  left: 1.125rem;
+  font-size: 0.9375rem;
+  color: #999;
+  pointer-events: none;
+  transition: all 0.2s ease;
+  background-color: transparent;
+  transform: none;
 }
 
-input {
+.modal-container .input-field input[type="text"],
+.modal-container .input-field input[type="number"],
+.modal-container .input-field input[type="date"] {
   width: 100%;
-  padding: 16px 18px;
-  font-size: 15px;
+  padding: 1rem 1.125rem;
+  font-size: 0.9375rem;
   color: #666;
   background-color: #f5f5f7;
   border: none;
-  border-radius: 8px;
+  border-radius: 0.5rem;
   outline: none;
   transition: background-color 0.2s;
+  box-shadow: none;
+  height: auto;
+  margin: 0;
+  box-sizing: border-box;
 }
 
-input::placeholder {
-  color: #999;
-}
-
-input:focus {
+.modal-container .input-field input[type="text"]:focus,
+.modal-container .input-field input[type="number"]:focus,
+.modal-container .input-field input[type="date"]:focus {
   background-color: #ebebed;
+  border: none;
+  box-shadow: none;
 }
 
-.submit-btn {
+.modal-container .input-field input[type="text"]:focus ~ label,
+.modal-container .input-field input[type="number"]:focus ~ label,
+.modal-container .input-field input[type="date"]:focus ~ label,
+.modal-container .input-field input[type="text"].valid ~ label,
+.modal-container .input-field input[type="number"].valid ~ label,
+.modal-container .input-field input[type="date"].valid ~ label,
+.modal-container .input-field input[type="text"]:not([value=""]) ~ label,
+.modal-container .input-field input[type="number"]:not([value=""]) ~ label,
+.modal-container .input-field input[type="date"]:not([value=""]) ~ label,
+.modal-container .input-field label.active {
+  top: -0.625rem;
+  left: 0.625rem;
+  font-size: 0.75rem;
+  background-color: white;
+  padding: 0 0.3125rem;
+  color: #1a1a1a;
+}
+
+.modal-container .input-field input[type="date"] {
+  color: transparent;
+}
+
+.modal-container .input-field input[type="date"]:focus,
+.modal-container .input-field input[type="date"]:not([value=""]) {
+  color: #666;
+}
+
+.modal-container
+  .input-field
+  input[type="date"]::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+}
+
+.modal-container form button.btn.submit-btn {
   width: 100%;
-  padding: 16px;
+  padding: 1rem;
   background-color: #7cc928;
   color: white;
-  font-size: 15px;
+  font-size: 0.9375rem;
   font-weight: 600;
   border: none;
-  border-radius: 8px;
+  border-radius: 0.5rem;
   cursor: pointer;
-  margin-top: 15px;
+  margin-top: 0.9375rem;
   transition: background-color 0.3s;
+  text-transform: none;
+  box-shadow: none;
+  height: auto;
+  line-height: normal;
 }
 
-.submit-btn:hover {
+.modal-container form button.btn.submit-btn:hover {
   background-color: #6db320;
+  box-shadow: none;
 }
 
-.submit-btn:active {
+.modal-container form button.btn.submit-btn:active,
+.modal-container form button.btn.submit-btn:focus {
   background-color: #5fa018;
+  box-shadow: none;
 }
 
 .modal.bottom-sheet {
@@ -87,32 +138,56 @@ input:focus {
   background-color: #7cc928;
 }
 
-.modal-content {
+.modal.bottom-sheet .modal-content {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 10rem;
-  padding: 40px 24px !important;
+  padding: 2.5rem 1.5rem;
 }
 
-.modal-content h4 {
+.modal.bottom-sheet .modal-content h4 {
   color: black;
-  font-size: 28px;
+  font-size: 1.75rem;
   font-weight: 600;
   margin: 0;
 }
 
-.success-icon {
+.modal.bottom-sheet .modal-content .success-icon {
   background-color: white;
   border-radius: 50%;
-  width: 70px;
-  height: 70px;
+  width: 4.375rem;
+  height: 4.375rem;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.success-icon i {
-  font-size: 48px;
+.modal.bottom-sheet .modal-content .success-icon i {
+  font-size: 3rem;
   color: #1a1a1a;
+}
+
+@media (max-width: 48rem) {
+  .modal-container {
+    margin: 2.5rem 1.25rem;
+    padding: 2.5rem 1.875rem;
+  }
+
+  .modal-container .input-field {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .modal-container .input-field input[type="text"],
+  .modal-container .input-field input[type="number"],
+  .modal-container .input-field input[type="date"] {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .modal.bottom-sheet .modal-content {
+    flex-direction: column;
+    gap: 2rem;
+  }
 }

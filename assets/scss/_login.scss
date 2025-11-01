@@ -1,0 +1,207 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  background-color: #f5f5f5;
+  min-height: 100vh;
+}
+
+.container-login {
+  display: flex;
+  min-height: 100vh;
+}
+
+.side_div {
+  flex: 1;
+  background-color: #73c91c;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  color: white;
+  text-align: center;
+}
+
+.side_div h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+}
+
+.side_div h2 {
+  font-size: 1.4rem;
+  font-weight: 400;
+}
+
+.form-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+}
+
+.form-container {
+  padding: 40px;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 420px;
+}
+
+.brand {
+  font-size: 1.1rem;
+  color: #666;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+}
+
+.form-container h2 {
+  text-align: center;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 2rem;
+}
+
+.input-field {
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.input-field input {
+  width: 100%;
+  background-color: #f5f7fa !important;
+  border: none !important;
+  border-radius: 8px !important;
+  padding: 15px !important;
+  font-size: 1rem !important;
+  color: #333 !important;
+  font-family: "Plus Jakarta Sans", sans-serif !important;
+  box-shadow: none !important;
+  height: auto !important;
+  margin: 0 !important;
+}
+
+.input-field input:focus {
+  background-color: #eef2f5 !important;
+  outline: none !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.input-field input:focus + label {
+  color: #999 !important;
+}
+
+.input-field label {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  font-size: 1rem;
+  color: #999;
+  pointer-events: none;
+  transition: all 0.2s ease;
+}
+
+.input-field input:focus + label,
+.input-field input:not(:placeholder-shown) + label {
+  top: -8px;
+  left: 10px;
+  font-size: 0.75rem;
+  background-color: #f5f7fa;
+  padding: 0 5px;
+  color: #999;
+}
+
+.input-field input::placeholder {
+  color: transparent;
+}
+
+.input-field input:focus::placeholder {
+  color: #999;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 15px;
+  background-color: #73c91c !important;
+  color: white !important;
+  border: none;
+  border-radius: 8px !important;
+  font-size: 1.1rem !important;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: "Plus Jakarta Sans", sans-serif !important;
+  transition: background-color 0.3s;
+  margin-top: 10px;
+  text-transform: none !important;
+  box-shadow: none !important;
+  height: auto !important;
+  line-height: normal !important;
+}
+
+.submit-btn:hover {
+  background-color: #65b318 !important;
+  box-shadow: none !important;
+}
+
+.submit-btn:focus {
+  background-color: #73c91c !important;
+}
+
+.forgot-password {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.forgot-password a {
+  color: #666;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.forgot-password a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .container-login {
+    flex-direction: column-reverse;
+  }
+
+  .side_div {
+    display: none;
+  }
+
+  .form-section {
+    padding: 20px;
+  }
+
+  .form-container {
+    padding: 30px 25px;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .form-container h2 {
+    font-size: 1.4rem;
+  }
+
+  .input-field {
+    width: 100%;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  .input-field input {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+}
