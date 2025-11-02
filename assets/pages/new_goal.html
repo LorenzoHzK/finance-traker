@@ -53,12 +53,17 @@
       </div>
     </div>
 
-    <script src="../js/materialize.min.js"></script>
-    <script src="../js/load-header.js"></script>
+    <script src="../js/trigger.js"></script>
+
     <script>
       document.addEventListener("DOMContentLoaded", function () {
-        var elems = document.querySelectorAll(".modal");
-        M.Modal.init(elems);
+        var modal = document.querySelector(".modal");
+        var instance = M.Modal.init(modal, {
+          dismissible: true,
+          onOpenEnd: function () {
+            setTimeout(() => instance.close(), 1000);
+          },
+        });
       });
     </script>
   </body>
