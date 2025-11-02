@@ -5,15 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login - FinanceTraker</title>
     <link rel="icon" href="assets/icons/favicon.icon" />
-    <link rel="stylesheet" href="/assets/css/main.css" />
+    <link rel="stylesheet" href="../css/main.css" />
   </head>
   <body>
     <div class="container-login">
       <div class="form-section">
-        <div class="form-container z-depth-2">
+        <div class="form-container">
           <div class="brand">Finanças</div>
           <h2>Bem-vindo de volta</h2>
-          <form action="./assets/pages/initial_page.html">
+          <form action="/index.html">
             <div class="input-field">
               <input id="email" type="email" class="validate" required />
               <label for="email">E-mail ou nome de usuário</label>
@@ -39,8 +39,11 @@
         <h2>Com o FinanceTraker, podemos tornar os seus sonhos realidade</h2>
       </div>
     </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script>
       document.addEventListener("DOMContentLoaded", function () {
+        M.AutoInit();
         M.updateTextFields();
       });
     </script>
