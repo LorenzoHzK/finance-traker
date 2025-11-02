@@ -6,10 +6,14 @@
     <title>FinanceTrack - Visão Geral</title>
     <link rel="icon" href="assets/icons/favicon.ico" />
     <link rel="stylesheet" href="../css/main.css" />
+    <!-- ADICIONE GOOGLE CHARTS -->
+    <script
+      type="text/javascript"
+      src="https://www.gstatic.com/charts/loader.js"
+    ></script>
   </head>
   <body>
     <div id="header-placeholder"></div>
-
     <div class="container-main">
       <h1>Visão Geral</h1>
       <div class="cards-row">
@@ -34,7 +38,8 @@
           <div class="progress-percentage">60%</div>
           <div class="progress-change">Este Ano +10%</div>
         </div>
-        <div class="chart-placeholder"></div>
+        <!-- SUBSTITUA chart-placeholder por um ID específico -->
+        <div id="chart_div" style="width: 100%; height: 400px"></div>
         <div class="months-labels">
           <span class="month-label">Jan</span>
           <span class="month-label">Fev</span>
@@ -46,7 +51,7 @@
         </div>
       </div>
     </div>
-
     <script src="../js/load-header.js"></script>
+    <script src="../js/chart.js"></script>
   </body>
 </html>
