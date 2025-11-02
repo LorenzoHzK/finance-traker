@@ -267,17 +267,12 @@
     </div>
 
     <script src="../js/load-header.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script>
-      function editGoal(goalName) {
-        alert(`Editar meta: ${goalName}`);
-      }
-
-      function deleteGoal(goalName) {
-        if (confirm(`Tem certeza que deseja excluir a meta "${goalName}"?`)) {
-          alert(`Meta "${goalName}" excluída!`);
-          // Aqui você implementaria a lógica real de exclusão
-        }
-      }
+      document.addEventListener("DOMContentLoaded", function () {
+        var elems = document.querySelectorAll(".sidenav");
+        var instances = M.Sidenav.init(elems);
+      });
     </script>
   </body>
 </html>
