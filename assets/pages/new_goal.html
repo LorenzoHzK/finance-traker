@@ -53,16 +53,22 @@
       </div>
     </div>
 
-    <script src="../js/trigger.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
     <script>
       document.addEventListener("DOMContentLoaded", function () {
+        M.AutoInit();
+        M.updateTextFields(); // Atualiza os labels
         var modal = document.querySelector(".modal");
         var instance = M.Modal.init(modal, {
           dismissible: true,
           onOpenEnd: function () {
             setTimeout(() => instance.close(), 1000);
           },
+        });
+        document.querySelectorAll(".modal-container input").forEach((input) => {
+          input.addEventListener("blur", () => M.updateTextFields());
+          input.addEventListener("input", () => M.updateTextFields());
         });
       });
     </script>
