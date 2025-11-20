@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Criar Conta - FinanceTraker</title>
+    <link rel="icon" href="../icons/favicon.ico" />
+    <link rel="stylesheet" href="../css/main.css" />
+  </head>
+
+  <body>
+    <div class="container-login">
+      <div class="form-section">
+        <div class="form-container">
+          <div class="brand">Finanças</div>
+          <h2>Crie sua conta</h2>
+
+          <form id="registerForm">
+            <div class="input-field">
+              <input id="email" type="email" class="validate" required />
+              <label for="email">E-mail</label>
+            </div>
+
+            <div class="input-field">
+              <input id="password" type="password" class="validate" required />
+              <label for="password">Senha</label>
+            </div>
+
+            <button
+              type="submit"
+              class="btn waves-effect waves-light submit-btn"
+            >
+              Criar conta
+            </button>
+          </form>
+
+          <div class="forgot-password">
+            <a href="./login_page.html">Já possui conta? Faça login</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="side_div">
+        <h1>Gerencie suas metas com facilidade!</h1>
+        <h2>Comece agora mesmo com o FinanceTraker</h2>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js/dist/umd/supabase.min.js"></script>
+
+    <script src="../js/supabaseClient.js"></script>
+    <script src="../js/registerPage.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        M.AutoInit();
+        M.updateTextFields();
+      });
+    </script>
+  </body>
+</html>
