@@ -132,4 +132,32 @@ body {
   .form-container {
     padding: 1.875rem 1.5625rem;
   }
+
+  .shake {
+    animation: shake 0.4s;
+  }
+  @keyframes shake {
+    0% {
+      transform: translateX(0);
+    }
+    25% {
+      transform: translateX(-6px);
+    }
+    50% {
+      transform: translateX(6px);
+    }
+    75% {
+      transform: translateX(-6px);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+  .input-error input {
+    border-bottom: 2px solid #e53935 !important;
+    box-shadow: 0 1px 0 0 #e53935 !important;
+  }
+  .input-error label {
+    color: #e53935 !important;
+  }
 }

@@ -7,24 +7,44 @@
     <link rel="icon" href="../icons/favicon.ico" />
     <link rel="stylesheet" href="../css/main.css" />
   </head>
-
   <body>
     <div class="container-login">
       <div class="form-section">
-        <div class="form-container">
+        <div class="form-container" id="registerBox">
           <div class="brand">Finanças</div>
           <h2>Crie sua conta</h2>
-
           <form id="registerForm">
-            <div class="input-field">
+            <div class="input-field" id="nameField">
+              <input id="name" type="text" class="validate" required />
+              <label for="name">Nome completo</label>
+            </div>
+
+            <div class="input-field" id="emailField">
               <input id="email" type="email" class="validate" required />
               <label for="email">E-mail</label>
             </div>
 
-            <div class="input-field">
+            <div class="input-field" id="passwordField">
               <input id="password" type="password" class="validate" required />
               <label for="password">Senha</label>
             </div>
+
+            <div class="input-field" id="confirmPasswordField">
+              <input
+                id="confirmPassword"
+                type="password"
+                class="validate"
+                required
+              />
+              <label for="confirmPassword">Confirmar senha</label>
+            </div>
+
+            <p>
+              <label>
+                <input type="checkbox" id="terms" required />
+                <span>Aceito os termos de uso</span>
+              </label>
+            </p>
 
             <button
               type="submit"
@@ -39,25 +59,22 @@
           </div>
         </div>
       </div>
-
       <div class="side_div">
         <h1>Gerencie suas metas com facilidade!</h1>
         <h2>Comece agora mesmo com o FinanceTraker</h2>
       </div>
     </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js/dist/umd/supabase.min.js"></script>
-
-    <script src="../js/supabaseClient.js"></script>
-    <script src="../js/registerPage.js"></script>
-
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mask-plugin/1.14.16/jquery.mask.min.js"></script>
     <script>
       document.addEventListener("DOMContentLoaded", function () {
         M.AutoInit();
         M.updateTextFields();
+        $("#cpf").mask("000.000.000-00", { reverse: true });
+        $("#phone").mask("(00) 00000-0000");
       });
     </script>
+    <script src="../js/registerPage.js"></script>
   </body>
 </html>

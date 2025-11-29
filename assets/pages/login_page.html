@@ -6,39 +6,6 @@
     <title>Login - FinanceTraker</title>
     <link rel="icon" href="../icons/favicon.ico" />
     <link rel="stylesheet" href="../css/main.css" />
-
-    <style>
-      .shake {
-        animation: shake 0.4s;
-      }
-
-      @keyframes shake {
-        0% {
-          transform: translateX(0);
-        }
-        25% {
-          transform: translateX(-6px);
-        }
-        50% {
-          transform: translateX(6px);
-        }
-        75% {
-          transform: translateX(-6px);
-        }
-        100% {
-          transform: translateX(0);
-        }
-      }
-
-      /* Input vermelho */
-      .input-error input {
-        border-bottom: 2px solid #e53935 !important;
-        box-shadow: 0 1px 0 0 #e53935 !important;
-      }
-      .input-error label {
-        color: #e53935 !important;
-      }
-    </style>
   </head>
   <body>
     <div class="container-login">
@@ -46,18 +13,15 @@
         <div class="form-container" id="loginBox">
           <div class="brand">Finanças</div>
           <h2>Bem-vindo de volta</h2>
-
           <form id="loginForm">
             <div class="input-field" id="emailField">
-              <input id="email" type="email" class="validate" required />
+              <input id="email" type="text" class="validate" required />
               <label for="email">E-mail ou nome de usuário</label>
             </div>
-
             <div class="input-field" id="passwordField">
               <input id="password" type="password" class="validate" required />
               <label for="password">Senha</label>
             </div>
-
             <button
               type="submit"
               class="btn waves-effect waves-light submit-btn"
@@ -65,37 +29,26 @@
               Entrar
             </button>
           </form>
-
-          <div class="forgot-password">
-            <a href="#!">Esqueceu a senha?</a>
-          </div>
-
           <div class="forgot-password">
             <a href="./register_page.html">Criar uma conta</a>
           </div>
         </div>
       </div>
-
       <div class="side_div">
         <h1>Descubra uma nova forma de organizar as suas metas!</h1>
         <h2>Com o FinanceTraker, podemos tornar os seus sonhos realidade</h2>
       </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js/dist/umd/supabase.min.js"></script>
-
-    <script src="../js/supabaseClient.js"></script>
-    <script src="../js/loginPage.js"></script>
-
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mask-plugin/1.14.16/jquery.mask.min.js"></script>
     <script>
       document.addEventListener("DOMContentLoaded", function () {
         M.AutoInit();
         M.updateTextFields();
       });
     </script>
-
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="../js/loginPage.js"></script>
   </body>
 </html>

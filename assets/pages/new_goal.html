@@ -9,42 +9,46 @@
   </head>
   <body>
     <div id="header-placeholder"></div>
-
     <div class="modal-container">
       <h1>Nova meta</h1>
-
-      <form>
+      <form id="newGoalForm">
         <div class="input-field">
           <input type="text" id="nome" class="validate" required />
           <label for="nome">Nome da meta</label>
         </div>
-
         <div class="input-field">
-          <input type="number" id="valor-total" class="validate" required />
+          <select id="categoria" required>
+            <option value="" disabled selected>Escolha uma categoria</option>
+            <option value="viagem">Viagem</option>
+            <option value="casa">Casa</option>
+            <option value="veiculo">Veículo</option>
+            <option value="educacao">Educação</option>
+            <option value="emergencia">Emergência</option>
+            <option value="outros">Outros</option>
+          </select>
+          <label>Categoria da meta</label>
+        </div>
+        <div class="input-field">
+          <input type="text" id="valor-total" class="validate" required />
           <label for="valor-total">Valor total a ser alcançado</label>
         </div>
-
         <div class="input-field">
-          <input type="number" id="valor-atual" class="validate" required />
+          <input type="text" id="valor-atual" class="validate" required />
           <label for="valor-atual">Valor atual</label>
         </div>
-
         <div class="input-field">
-          <input type="number" id="valor-mensal" class="validate" required />
+          <input type="text" id="valor-mensal" class="validate" required />
           <label for="valor-mensal">Valor economizado mensalmente</label>
         </div>
-
         <div class="input-field">
           <input type="date" id="data" class="validate" />
           <label for="data">Data limite (opcional)</label>
         </div>
-
         <button type="submit" class="btn waves-effect waves-light submit-btn">
           Criar meta
         </button>
       </form>
     </div>
-
     <div id="modal1" class="modal bottom-sheet">
       <div class="modal-content">
         <h4>Meta adicionada com sucesso!</h4>
@@ -54,15 +58,22 @@
       </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js/dist/umd/supabase.min.js"></script>
-    <script src="../js/supabaseClient.js"></script>
-    <script src="../js/new_goal.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mask-plugin/1.14.16/jquery.mask.min.js"></script>
     <script src="../js/load-header.js"></script>
     <script>
       document.addEventListener("DOMContentLoaded", function () {
         M.AutoInit();
         M.updateTextFields();
+
+        var elems = document.querySelectorAll("select");
+        var instances = M.FormSelect.init(elems);
+
+        $("#valor-total").mask("#.##0,00", { reverse: true });
+        $("#valor-atual").mask("#.##0,00", { reverse: true });
+        $("#valor-mensal").mask("#.##0,00", { reverse: true });
+
         var modal = document.querySelector(".modal");
         var instance = M.Modal.init(modal, {
           dismissible: true,
@@ -70,12 +81,13 @@
             setTimeout(() => instance.close(), 1000);
           },
         });
+
         document.querySelectorAll(".modal-container input").forEach((input) => {
           input.addEventListener("blur", () => M.updateTextFields());
           input.addEventListener("input", () => M.updateTextFields());
         });
       });
     </script>
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="../js/new_goal.js"></script>
   </body>
 </html>

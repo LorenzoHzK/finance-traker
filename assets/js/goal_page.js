@@ -1,44 +1,68 @@
-async function carregarMetas() {
+function carregarMetas() {
   const lista = document.querySelector(".goals-list");
-  lista.innerHTML = "<p>Carregando metas...</p>";
+  const template = lista.querySelector(".template");
 
-  const { data: user } = await supabaseClient.auth.getUser();
-  if (!user?.user) {
-    lista.innerHTML = "<p>Você precisa fazer login.</p>";
+  lista
+    .querySelectorAll(".goal-item:not(.template)")
+    .forEach((el) => el.remove());
+
+  const loggedUser = JSON.parse(
+    localStorage.getItem("financetrakerLoggedUser")
+  );
+
+  if (!loggedUser) {
+    lista.innerHTML += "<p>Você precisa fazer login.</p>";
     return;
   }
 
-  const { data: goals, error } = await supabaseClient
-    .from("goals")
-    .select("*")
-    .eq("user_id", user.user.id);
+  const allGoals = JSON.parse(localStorage.getItem("financetrakerGoals")) || [];
+  const userGoals = allGoals.filter((g) => g.userId === loggedUser.id);
 
-  if (error) {
-    lista.innerHTML = "<p>Erro ao carregar as metas.</p>";
+  if (userGoals.length === 0) {
+    lista.innerHTML += "<p>Você ainda não possui metas cadastradas.</p>";
     return;
   }
 
-  lista.innerHTML = "";
+  userGoals.forEach((g) => {
+    const clone = template.cloneNode(true);
+    clone.classList.remove("template");
+    clone.style.display = "flex";
 
-  goals.forEach((g) => {
     const percent = Math.min(100, (g.current / g.total) * 100);
 
-    const item = `
-      <div class="goal-item">
-        <div class="goal-info">
-          <div class="goal-title">${g.title}</div>
-          <div class="goal-amount">R$ ${g.current} de R$ ${g.total}</div>
-        </div>
-        <div class="goal-progress">
-          <div class="progress-bar-container">
-            <div class="progress-bar-fill" style="width: ${percent}%"></div>
-          </div>
-          <div class="progress-percentage">${percent.toFixed(1)}%</div>
-        </div>
-      </div>
-    `;
-    lista.insertAdjacentHTML("beforeend", item);
+    clone.querySelector(".goal-title").textContent = g.title;
+    clone.querySelector(".goal-amount").textContent = `R$ ${formatarValor(
+      g.current
+    )} de R$ ${formatarValor(g.total)}`;
+
+    clone.querySelector(".progress-bar-fill").style.width = percent + "%";
+    clone.querySelector(".progress-percentage").textContent =
+      percent.toFixed(1) + "%";
+
+    clone.querySelector(".delete-btn").onclick = () => deleteGoal(g.id);
+
+    lista.appendChild(clone);
   });
+}
+
+function formatarValor(valor) {
+  return valor.toLocaleString("pt-BR", {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  });
+}
+
+function deleteGoal(goalId) {
+  if (confirm("Tem certeza que deseja excluir esta meta?")) {
+    const allGoals =
+      JSON.parse(localStorage.getItem("financetrakerGoals")) || [];
+    const updatedGoals = allGoals.filter((g) => g.id !== goalId);
+
+    localStorage.setItem("financetrakerGoals", JSON.stringify(updatedGoals));
+
+    M.toast({ html: "Meta excluída com sucesso!", classes: "green" });
+    carregarMetas();
+  }
 }
 
 document.addEventListener("DOMContentLoaded", carregarMetas);

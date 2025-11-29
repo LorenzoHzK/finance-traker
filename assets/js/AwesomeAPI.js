@@ -1,28 +1,45 @@
 fetch(
-  "https://economia.awesomeapi.com.br/json/last/USD-BRL,EUR-BRL,GBP-BRL,ARS-BRL,BTC-BRL"
+  "https://economia.awesomeapi.com.br/json/last/" +
+    "USD-BRL,EUR-BRL,GBP-BRL,ARS-BRL,BTC-BRL," +
+    "JPY-BRL,CAD-BRL,CHF-BRL,CNY-BRL,AUD-BRL,NZD-BRL"
 )
   .then((res) => res.json())
   .then((data) => {
-    document.getElementById("usd-value").textContent = `R$ ${Number(
-      data.USDBRL.high
-    ).toFixed(2)}`;
-    document.getElementById("eur-value").textContent = `R$ ${Number(
-      data.EURBRL.high
-    ).toFixed(2)}`;
-    document.getElementById("gbp-value").textContent = `R$ ${Number(
-      data.GBPBRL.high
-    ).toFixed(2)}`;
-    document.getElementById("ars-value").textContent = `R$ ${Number(
-      data.ARSBRL.high
-    ).toFixed(2)}`;
-    document.getElementById("btc-value").textContent = `R$ ${Number(
-      data.BTCBRL.high
-    ).toFixed(2)}`;
+    function setValue(id, key) {
+      document.getElementById(id).textContent = `R$ ${Number(
+        data[key].high
+      ).toFixed(2)}`;
+    }
+
+    setValue("usd-value", "USDBRL");
+    setValue("eur-value", "EURBRL");
+    setValue("gbp-value", "GBPBRL");
+    setValue("ars-value", "ARSBRL");
+    setValue("btc-value", "BTCBRL");
+
+    setValue("jpy-value", "JPYBRL");
+    setValue("cad-value", "CADBRL");
+    setValue("chf-value", "CHFBRL");
+    setValue("cny-value", "CNYBRL");
+    setValue("aud-value", "AUDBRL");
+    setValue("nzd-value", "NZDBRL");
   })
   .catch(() => {
-    document.getElementById("usd-value").textContent = "Erro ao carregar";
-    document.getElementById("eur-value").textContent = "Erro ao carregar";
-    document.getElementById("gbp-value").textContent = "Erro ao carregar";
-    document.getElementById("ars-value").textContent = "Erro ao carregar";
-    document.getElementById("btc-value").textContent = "Erro ao carregar";
+    const allIds = [
+      "usd-value",
+      "eur-value",
+      "gbp-value",
+      "ars-value",
+      "btc-value",
+      "jpy-value",
+      "cad-value",
+      "chf-value",
+      "cny-value",
+      "aud-value",
+      "nzd-value",
+    ];
+
+    allIds.forEach((id) => {
+      document.getElementById(id).textContent = "Erro ao carregar";
+    });
   });
