@@ -1,91 +1,81 @@
-# finance-traker
-Projeto em Refencia a matéria da faculdade UTFPR de desenvolvimento de páginas web com framework e CSS
+# FinanceTraker 
+### **Autor:** Matheus Lorenzo Siqueira
 
-# Tema do projeto: controlar as suas metas pessoas economicas
-# Nome do projeto: Finance Traker
+Este projeto tem como objetivo permitir ao usuário criar metas financeiras, acompanhar seu progresso e controlar o quanto já foi economizado em cada objetivo.  
+A aplicação foi desenvolvida utilizando HTML, CSS, JavaScript e o framework MaterializeCSS. Os dados são persistidos através da API de LocalStorage do navegador.
 
+## Design das Telas - Figma
+https://www.figma.com/design/USSvzJStxapH1mTLA6oPD3/Finance-Tracker?node-id=0-1&t=3TSh88Uhx3C9qzhW-1
 
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-O projeto consiste em algumas páginas  que permitem ao usuário criar metas financeiras, acompanhar seu progresso e manter o controle sobre o quanto já economizou em cada objetivo.
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+## Design System
+https://www.figma.com/design/USSvzJStxapH1mTLA6oPD3/Finance-Tracker?node-id=3336-2&p=f&t=3TSh88Uhx3C9qzhW-0
 
-Funcionalidades principais:
-Tela de Login:
-Acesso do usuário, uma tela simples de Login
-Tela de Dashboard:
-Resumo geral do progresso financeiro: número de metas atingidas, metas concluídas, e valor total economizado.
+## Site em Produção - GitHub Pages
+https://lorenzohzk.github.io/finance-traker/
 
-Tela para Criar Nova Meta:
-Nome da meta (ex: Viagem para o litoral)
-Valor total a ser alcançado
-Valor atual (quanto já economizou)
-Data limite (opcional)
-Tela de Metas (Objetivos): Lista de todas as metas criadas com uma barra de progresso para cada uma, mostrando quanto falta para completar.
-Tela de cotação de moedas: Tela com a cotação das moedas, Dólar, Euro e Real, para você tirar de base uma meta, para caso queira fazer uma viagem para o exterior
+## Framework CSS
+**MaterializeCSS**
 
-Inspiração: Nenhuma, utilizei o Stitch para gerar
+## Dependências JavaScript
+- **M.toast (Materialize)** – para feedback ao usuário  
+- **Browser APIs nativas**  
+- **LocalStorage API** – para persistência de dados  
+- **Events API**  
+- **Fetch API**
 
-Link do projeto: https://github.com/LorenzoHzK/finance-traker
+---
 
+# Checklist | Indicadores de Desempenho (ID) dos Resultados de Aprendizagem (RA)
 
-
-Checklist | Indicadores de Desempenho (ID) dos Resultados de Aprendizagem (RA)
 RA1 - Utilizar Frameworks CSS para estilização de elementos HTML e criação de layouts responsivos.
+    - [x] ID 01 - Prototipa interfaces adaptáveis para no mínimo os tamanhos de tela mobile e desktop, usando ferramentas de design tradicionais (Figma, Quant UX ou Sketch) ou IA (Stitch).
+    - [x] ID 02 - Implementa layout responsivo com Framework CSS (Bootstrap, Materialize, Tailwind + DaisyUI) usando Flexbox ou Grid do próprio framework.
+    - [x] ID 03 - Implementa layout responsivo com CSS puro, usando Flexbox ou Grid Layout.
+    - [x] ID 04 - Utiliza componentes prontos de um Framework CSS (ex.: card, button) e componentes JavaScript do framework (ex.: modal, carousel).
+    - [x] ID 05 - Cria layout fluido usando unidades relativas (vw, vh, %, em, rem) no lugar de unidades fixas (px).
+    - [x] ID 06 - Aplica um Design System consistente (cores, tipografia, padrões de componentes) em toda a aplicação.
+    - [x] ID 07 - Utiliza Sass (SCSS) com ou sem framework, aplicando variáveis, mixins e funções para modularizar o código.
+    - [x] ID 08 - Aplica tipografia responsiva (media queries mobile first) ou tipografia fluida (função clamp() + unidades relativas).
+    - [ ] ID 09 – Aplica técnicas de responsividade de imagens usando CSS (object-fit, containers com unidades relativas).
+    - [ ] ID 10 – Otimiza imagens usando formatos modernos (WebP) e carregamento adaptativo (srcset, picture, ou parâmetros do Cloudinary).
 
-    ID0 - Prototipa interfaces adaptáveis para no mínimo os tamanhos de tela mobile e desktop, usando ferramentas de design como Figma, Quant UX ou Sketch.
-    ID01 - Implementa um layout responsivo de uma página web utilizando um Framework CSS, como Bootstrap, Materialize ou Tailwind (com DaisyUI), aproveitando as técnicas de Flexbox ou Grid oferecidas pelo próprio framework, garantindo que o layout se adapte adequadamente a diferentes tamanhos de tela e dispositivos.
-    ID 02 - Utiliza técnica de responsividade nativa de CSS, como Flexbox ou Grid Layout, para criar layouts responsivos e fluidos em diferentes resoluções de tela.
-    ID 03 - Utiliza componentes CSS (ex. card, button ou outros) e JavaScript (ex. modal, carrousel ou outro) oferecidos por um Framework CSS.
-    ID 04 - Implementa um layout fluido e responsivo utilizando unidades relativas (vw, vh, %, em ou rem) em vez de unidades fixas (px) em diferentes dispositivos e tamanhos de tela.
-    ID 05 - Implementa animações em elementos da página, como fadeIn/fadeOut, slideIn/slideOut, utilizando CSS Animations ou bibliotecas de animação, como o Animate.css ou JQuery, para fornecer feedback visual ao usuário e criar uma experiência interativa.
-    [ ] ID 06 - Cria transições personalizadas entre diferentes estados da página ou elementos, como mudanças de layout, alterações de cor ou exibição/hide de elementos, usando CSS Transitions ou CSS Animation, para melhorar a usabilidade e a aparência da aplicação.
-    ID 07 - Aplica um Design System consistente, definindo diretrizes de estilo, cores, tipografia e padrões de componentes que são seguidos em toda a aplicação, garantindo uma experiência de usuário uniforme e atraente.
-    ID 08 - Implementa pré-processadores CSS, como o Sass, em conjunto com um Framework CSS ou de forma isolada, para organizar e modularizar o código CSS, aplicando variáveis, mixins e funções para facilitar a manutenção e escalabilidade dos estilos.
-    ID 09 - Aplica tipografia responsiva utilizando media queries ou a função clamp(), em conjunto com unidades relativas como rem, em ou vw, para ajustar o tamanho da fonte de acordo com diferentes tamanhos de tela.
+RA2 - Realizar tratamento de formulários e aplicar validações customizadas no lado cliente.
+    - [x] ID 11 - Implementa validação HTML nativa (campos obrigatórios, tipos, limites de caracteres) com mensagens de erro/sucesso no lado cliente.
+    - [x] ID 12 - Aplica expressões regulares (REGEX) para validações customizadas (e-mail, telefone, datas, etc.)
+    - [x] ID 13 - Utiliza elementos de seleção em formulários (checkbox, radio, select) para coleta de dados.
+    - [x] ID 14 - Implementa leitura e escrita no Web Storage (localStorage/sessionStorage) para persistir dados localmente.
 
-RA2 - Realizar tratamento de formulários e aplicar validações customizadas no lado cliente, utilizando a API do HTML e expressões regulares (REGEX).
-
-    ID 10 - Implementa tratamento de formulários no lado cliente com apresentação de mensagens de erro (texto próximo dos campos de entrada ou balões com mensagens) ou sucesso, utilizando os recursos da API do HTML, como validação de campos obrigatórios, tipo de entrada e limites de caracteres, garantindo que os dados inseridos sejam válidos antes de serem enviados para o servidor (via tratador de evento submit).
-    ID 11 - Aplica expressões regulares (REGEX) de forma eficiente para realizar validações customizadas nos campos de formulários, como formatos específicos de e-mail, telefone, data ou outros padrões personalizados definidos pelos requisitos do projeto.
-    ID 12 - Incorpora elementos de listagem, como checkbox, radio ou select, de maneira eficiente em formulários web, possibilitando a seleção e coleta precisa de dados pelos usuários.
-    ID 13 - Realiza a escrita e leitura de dados no Web Storage, permitindo a persistência de informações entre sessões de usuário e fornecendo uma maneira eficaz de armazenar dados localmente no navegador.
-
-RA3 - Aplicar ferramentas para otimização do processo de desenvolvimento web, incluindo Node.js, NPM e linters para garantir a qualidade do código, juntamento com boas práticas de versionamento e organização de projetos.
-
-    ID 14 - Configura adequadamente um ambiente de desenvolvimento usando Node.js e NPM para gerenciar pacotes e dependências do projeto, facilitando a instalação e o uso de bibliotecas e ferramentas de terceiros.
-    ID 15 - Utiliza linters, como ESLint ou Stylelint, para analisar e corrigir automaticamente problemas de código, incluindo erros de sintaxe, estilo e boas práticas, garantindo a qualidade e consistência do código do projeto.
-    ID 16 - Adota boas práticas de versionamento utilizando sistemas como Git e GitHub, criando e gerenciando repositórios com branches adequados ou pelo menos o branch main.
-    [ ] ID 17 - Utiliza técnicas de minificação e otimização de recursos, como minificação de CSS e JavaScript e otimização de imagens, para melhorar o desempenho e o tempo de carregamento do site ou aplicação.
-    ID 18 - Organiza o arquivo README.md conforme o template exigido na disciplina, contendo informações claras e estruturadas sobre o projeto, principalmente o checklist de tópicos devidamente preenchido.
-    ID 19 - Organiza os arquivos do projeto em uma estrutura coerente, lógica e modular, conforme projeto de exemplo, facilitando a localização, manutenção e escalabilidade.
-    [ ] ID 20 - Utiliza as metodologias BEM (Block Element Modifier) ou SMACSS (Scalable and Modular Architecture for CSS) para organizar e estruturar os estilos CSS de forma eficiente, garantindo a reutilização de estilos, a legibilidade do código e a manutenção sustentável do projeto.
+RA3 - Aplicar ferramentas para otimização do processo de desenvolvimento web.
+    - [x] ID 15 - Configura ambiente com Node.js e NPM para gerenciamento de pacotes e dependências.
+    - [x] ID 16 - Utiliza boas práticas de versionamento no Git/GitHub (branch main ou branches específicos, uso de .gitignore).
+    - [x] ID 17 - Mantém um README.md padronizado, conforme template da disciplina, com checklist preenchido.
+    - [x] ID 18 - Organiza arquivos do projeto de forma modular, seguindo padrão de exemplo fornecido.
+    - [x] ID 19 - Configura linters e formatadores (ESLint, Prettier) para manter qualidade e padronização do código.
 
 RA4 - Aplicar bibliotecas de funções e componentes em JavaScript para aprimorar a interatividade de páginas web.
-
-    ID 21 - Utiliza a biblioteca jQuery para manipular o DOM e aprimorar a interatividade das páginas web, implementando funcionalidades como eventos, animações e manipulação de elementos HTML de forma eficiente.
-    ID 22 - Seleciona e integra com sucesso um plugin jQuery, como o jQuery Mask Plugin ou outro plugin relevante para o projeto, a fim de melhorar a funcionalidade ou a aparência de elementos específicos em uma página web.
-    [ ] ID 23 - Utiliza bibliotecas de web components, como Lit, para criar componentes reutilizáveis e encapsulados, melhorando a modularidade e a manutenibilidade das páginas web.
-    [ ] ID 24 - Utiliza uma biblioteca de componentes prontos, como Material Web Components ou outra de escolha, ou então, algum componente independente (standalone) a fim de oferecer funcionalidades específicas sem a necessidade de estar integrado a uma biblioteca completa.
+    - [x] ID 20 - Utiliza jQuery para manipulação do DOM e interatividade (eventos, animações, manipulação de elementos)
+    - [x] ID 21 - Integra e configura um plugin jQuery relevante (ex.: jQuery Mask Plugin). 
 
 RA5 - Efetuar requisições assíncronas para uma API fake e APIs públicas, permitindo a obtenção e manipulação de dados dinamicamente.
+    - [ ] ID 22 - Realiza requisições assíncronas para uma API fake (ex.: JSON Server) para persistir dados de um formulário.
+    - [x] ID 23 - Realiza requisições assíncronas para uma API fake para exibir dados na página.
+    - [x] ID 24 - Realiza requisições assíncronas para APIs públicas reais (OpenWeather, ViaCEP etc.), exibindo os dados e tratando erros.
 
-    ID 25 - Realiza requisições assíncronas para uma API fake utilizando adequadamente conceitos como AJAX, Fetch API ou bibliotecas, para persistir os dados originados de um formulário.
-    ID 26 - Realiza requisições assíncronas para uma API fake utilizando adequadamente conceitos como AJAX, Fetch API ou bibliotecas, para exibição dos dados na página web.
+---
 
-Manual de execução
+# Manual de Execução
+- Clonar o repositório com `git clone`  
+- Abrir o projeto no editor Visual Studio Code (VS Code)  
+- Abrir o arquivo `index.html` diretamente no navegador  
+- (Opcional) Utilizar a extensão **Live Server** para recarregamento automático  
+- Vizualizar o LocalStorage com as informações que ele irá cadastrar  
+- Executar o frontend no navegador
 
-    Clonar o repositório com git clone
-    Fazer checkout no branch develop que contém as modificações mais recentes
-    Abrir o projeto no editor Visual Studio Code (VS Code)
-    Abrir um terminal pelo VSCode ou qualquer terminal do seu Sistema Operacional apontando para o diretório raiz do projeto
-    Instalar as dependências contidas no package.json
-        Comando: npm i
-    (Opcional) Instalar o JSON Server globalmente disponível em https://www.npmjs.com/package/json-server
-        Comando: npm i -g json-server
-        É opcional porque a dependência já vem cadastrada no arquivo package.json para instalação local na pasta node_modules
-    Executar a API Fake (JSON Server) via um dos seguintes comandos:
-        Execução via script registrado no package.json: npm run json:server:routes
-        Ou via Execução explícita: json-server --watch db.json --routes routes.json
-    O comando para execução do JSON Server deve ser aplicado no diretório raiz do projeto, ou seja, que contém o arquivo db.json e routes.json.
-        Por padrão, a aplicação JSON Server executa no endereço localhost:3000
-    Executar o projeto frontend.
+---
+
+## Telas da aplicação
+
+<img width="1865" height="977" alt="Screenshot from 2025-11-29 19-08-39" src="https://github.com/user-attachments/assets/5425cf0e-d60e-4df6-a9e9-c5a07c4292ec" />
+<img width="1865" height="977" alt="Screenshot from 2025-11-29 19-09-50" src="https://github.com/user-attachments/assets/77ebe064-9a90-4e08-b4ea-38daac7f6d59" />
+<img width="1865" height="977" alt="Screenshot from 2025-11-29 19-10-11" src="https://github.com/user-attachments/assets/5fa34ac4-acac-4988-a2a4-703348848690" />
+<img width="1865" height="977" alt="Screenshot from 2025-11-29 19-10-40" src="https://github.com/user-attachments/assets/a5d857b6-4c0c-4387-a14f-4e752aa8aac7" />
